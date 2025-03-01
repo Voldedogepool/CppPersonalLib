@@ -16,6 +16,7 @@ class List {
   int Count();
   T operator[](int index);
   void Add(T newElement);
+  void Remove(T elementToRemove);
 };
 
 // Implementation
@@ -64,5 +65,32 @@ void List<T>::Add(T newElement) {
 
   // Inserting the new value
   _array[_nextIndex] = newElement;
-_nextIndex++;
+  _nextIndex++;
+}
+
+template <typename T>
+void List<T>::Remove(T elementToRemove) {
+  // If no elemets are in the list ==> nothing to do
+  if (_nextIndex == 0) {
+    return;
+  }
+
+  // First we identify the index of the element to remove
+  int indexOfElement = 0;
+  for (int i = 0; i < _nextIndex; i++) {
+    if (_array[i] == elementToRemove) {
+      indexOfElement = i;
+    }
+  }
+
+  // Now we need to free the element
+  //delete _array[indexOfElement];
+
+  // Now we compact the array
+  for (int i = indexOfElement; i < _nextIndex; i++) {
+    _array[i] = _array[i+1];
+  }
+
+  // Since we removed one element we need 
+  _nextIndex--;
 }
