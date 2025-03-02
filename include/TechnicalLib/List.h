@@ -3,6 +3,7 @@
 /*
  * Generic auto-resizable list
  */
+#include <stdexcept>
 template <typename T>
 class List {
  private:
@@ -42,6 +43,9 @@ int List<T>::Count() {
 
 template <typename T>
 T List<T>::operator[](int index) {
+  if(index < 0 || index >= _nextIndex){
+    throw std::out_of_range("Index out or range");
+  }
   return _array[index];
 }
 
