@@ -17,6 +17,7 @@ class List {
   T operator[](int index);
   void Add(T newElement);
   void Remove(T elementToRemove);
+  void Clear();
 };
 
 // Implementation
@@ -93,4 +94,11 @@ void List<T>::Remove(T elementToRemove) {
 
   // Since we removed one element we need 
   _nextIndex--;
+}
+
+template <typename T>
+void List<T>::Clear(){
+  delete[] _array;
+  _array = new T[_capacity];
+  _nextIndex = 0;
 }
