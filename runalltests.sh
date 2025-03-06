@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "LAUNCHING TESTS ...STARTED ..."
 cd ./build/bin/Test/Release/ 
-./TestAll
+./PersonalLibTestAll
 cd ../../../../
 echo "LAUNCHING TESTS ...FINISHED"

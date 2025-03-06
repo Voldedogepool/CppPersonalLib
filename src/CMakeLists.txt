@@ -7,5 +7,5 @@ set(
 )
 
 # Create executables + Linking the libraries
-add_executable(TestConsole TestConsole/main.cpp)
-target_link_libraries(TestConsole PRIVATE TechnicalLib)
+add_executable(PersonalLibTestConsole PersonalLibTestConsole/main.cpp)
+target_link_libraries(PersonalLibTestConsole PRIVATE TechnicalLib)

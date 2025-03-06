@@ -11,14 +11,14 @@ TechnicalLibTestCPP
 CONFIGURE_DEPENDS
 "TechnicalLibTest/*.cpp")
 
-add_executable( TestAll ${TechnicalLibTestCPP} )
+add_executable( PersonalLibTestAll ${TechnicalLibTestCPP} )
 
 target_link_libraries(
-TestAll
+PersonalLibTestAll
 PRIVATE
 TechnicalLib
 GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests( TestAll )
+gtest_discover_tests( PersonalLibTestAll )

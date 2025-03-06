@@ -9,7 +9,7 @@ enable_testing()
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 #Add Local Libraries
-include(AddLocalLibraries)
+include(AddTechnicalLib)
 
 #Adding the different needed subdirectories
 add_subdirectory(src)
